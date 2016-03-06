@@ -19,7 +19,7 @@ Basic usage
 
 .. code-block:: python
 
-    from matterhook import WebHook
+    from matterhook import Webhook
 
     # mandatory parameters are url and your webhook API key
     mwh = Webhook('https://mattermost.MYCOMPANY.com', 'API_KEY')
@@ -32,7 +32,7 @@ Advanced usage
 
 .. code-block:: python
 
-    from matterhook import WebHook
+    from matterhook import Webhook
 
     # mandatory parameters are url and your webhook API key
     mwh = Webhook('https://mattermost.MYCOMPANY.com', 'API_KEY')
