@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import requests
 
 __all__ = ["Webhook"]
@@ -13,7 +11,7 @@ class HTTPError(Exception):
     pass
 
 
-class Webhook(object):
+class Webhook:
     """
     Interacts with a Mattermost incoming webhook.
     """
