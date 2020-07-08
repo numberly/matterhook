@@ -112,3 +112,4 @@ class Webhook:
         r = requests.post(self.incoming_hook_url, json=payload)
         if r.status_code != 200:
             raise HTTPError(r.text)
+
