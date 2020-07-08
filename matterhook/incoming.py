@@ -23,12 +23,14 @@ class Webhook(object):
                  api_key,
                  channel=None,
                  icon_url=None,
-                 username=None):
+                 username=None,
+                 attachments=None):
         self.api_key = api_key
         self.channel = channel
         self.icon_url = icon_url
         self.username = username
         self.url = url
+        self.attachments = attachments
 
     def __setitem__(self, channel, payload):
         if isinstance(payload, dict):
@@ -45,7 +47,12 @@ class Webhook(object):
     def incoming_hook_url(self):
         return '{}/hooks/{}'.format(self.url, self.api_key)
 
-    def send(self, message, channel=None, icon_url=None, username=None):
+    def send(self,
+             message,
+             channel=None,
+             icon_url=None,
+             username=None,
+             attachments=None):
         payload = {'text': message}
 
         if channel or self.channel:
@@ -54,6 +61,8 @@ class Webhook(object):
             payload['icon_url'] = icon_url or self.icon_url
         if username or self.username:
             payload['username'] = username or self.username
+        if attachments or self.attachments:
+            payload['attachments'] = attachments or self.attachments
 
         r = requests.post(self.incoming_hook_url, json=payload)
         if r.status_code != 200:
