@@ -52,3 +52,23 @@ Advanced usage
 
     # ...and even this
     mwh['incredible_channel'] = {'text': 'incredible message', username='incredible user'}
+
+    # or create fancy messages using attachments (https://docs.mattermost.com/developer/message-attachments.html)
+    attachments = []
+    message = {}
+    message['color'] = '#88fc03'
+    message['image_url'] = 'https://about.mattermost.com/wp-content/uploads/2017/08/Mattermost-Logo-Blue.svg'
+    message['fallback'] = 'A fallback message'
+    markdown_msg = '#### Title\n'
+    markdown_msg += 'This is a line of text\n'
+    markdown_msg += 'All markdown syntax works in attachments, like tables :\n'
+    markdown_msg += '''
+    | name                               |   date |
+    |------------------------------------|--------|
+    | Monty Python and the Holy Grail    |   1975 |
+    | Monty Python's Life of Brian       |   1979 |
+    | Monty Python's The Meaning of Life |   1983 |
+    '''
+    message['text'] = markdown_msg
+    attachments.append(message)
+    mwh.send(attachments=attachments)
