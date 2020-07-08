@@ -48,7 +48,7 @@ class Webhook(object):
         return '{}/hooks/{}'.format(self.url, self.api_key)
 
     def send(self,
-             message,
+             message=None,
              channel=None,
              icon_url=None,
              username=None,
