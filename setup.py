@@ -26,7 +26,7 @@ def read(fname: str):
 
 
 class PyTest(TestCommand):
-    user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
+    user_options = [("pytest-args=", "a", "Arguments to pass to py.test")]
 
     def initialize_options(self):
         TestCommand.initialize_options(self)
@@ -36,45 +36,46 @@ class PyTest(TestCommand):
         TestCommand.finalize_options(self)
 
         # https://bitbucket.org/pypa/setuptools/commits/cf565b6
-        if get_distribution('setuptools').parsed_version \
-           < parse_version('18.4'):
+        if get_distribution("setuptools").parsed_version < parse_version("18.4"):
             self.test_args = []
             self.test_suite = True
 
     def run_tests(self):
         # import here, cause outside the eggs aren't loaded
         import pytest
+
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
 
 
 setup(
-    author='numberly',
+    author="numberly",
     classifiers=[
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.2",
+        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    cmdclass={'test': PyTest},
-    description='Interact with Mattermost incoming webhooks easily.',
-    download_url='https://github.com/numberly/matterhook/tags',
+    cmdclass={"test": PyTest},
+    description="Interact with Mattermost incoming webhooks easily.",
+    download_url="https://github.com/numberly/matterhook/tags",
     include_package_data=True,
     install_requires=[],
-    license='BSD',
-    long_description=read('README.rst'),
-    name='matterhook',
+    license="BSD",
+    long_description=read("README.rst"),
+    name="matterhook",
     packages=find_packages(),
-    platforms='any',
-    tests_require=['pytest'],
-    url='https://github.com/numberly/matterhook',
-    version='0.2',
-    zip_safe=True)
+    platforms="any",
+    tests_require=["pytest"],
+    url="https://github.com/numberly/matterhook",
+    version="0.2",
+    zip_safe=True,
+)

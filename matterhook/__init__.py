@@ -1,3 +1,3 @@
 from matterhook.incoming import Webhook
 
-__all__ = ['Webhook']
+__all__ = ["Webhook"]
