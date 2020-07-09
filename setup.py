@@ -36,7 +36,8 @@ class PyTest(TestCommand):
         TestCommand.finalize_options(self)
 
         # https://bitbucket.org/pypa/setuptools/commits/cf565b6
-        if get_distribution("setuptools").parsed_version < parse_version("18.4"):
+        if get_distribution("setuptools").parsed_version \
+           < parse_version("18.4"):
             self.test_args = []
             self.test_suite = True
 
@@ -55,13 +56,11 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.2",
-        "Programming Language :: Python :: 3.3",
-        "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     cmdclass={"test": PyTest},
