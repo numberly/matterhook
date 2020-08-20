@@ -36,8 +36,7 @@ class PyTest(TestCommand):
         TestCommand.finalize_options(self)
 
         # https://bitbucket.org/pypa/setuptools/commits/cf565b6
-        if get_distribution("setuptools").parsed_version \
-           < parse_version("18.4"):
+        if get_distribution("setuptools").parsed_version < parse_version("18.4"):
             self.test_args = []
             self.test_suite = True
 

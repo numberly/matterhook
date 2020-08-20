@@ -1,17 +1,19 @@
 class Attachment:
-    def __init__(self,
-                 fallback: str,
-                 color: str = None,
-                 pretext: str = None,
-                 text: str = None,
-                 author_name: str = None,
-                 author_link: str = None,
-                 author_icon: str = None,
-                 title: str = None,
-                 title_link: str = None,
-                 fields: list = None,
-                 image_url: str = None,
-                 thumb_url: str = None):
+    def __init__(
+        self,
+        fallback: str,
+        color: str = None,
+        pretext: str = None,
+        text: str = None,
+        author_name: str = None,
+        author_link: str = None,
+        author_icon: str = None,
+        title: str = None,
+        title_link: str = None,
+        fields: list = None,
+        image_url: str = None,
+        thumb_url: str = None,
+    ):
         self.fallback = fallback
         self.color = color
         self.pretext = pretext

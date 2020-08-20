@@ -51,8 +51,4 @@ attachment = Attachment(
 )
 attachments.append(attachment.payload)
 
-mhw.send(
-    username="Flying Circus",
-    icon_url=author_icon,
-    attachments=attachments
-)
+mhw.send(username="Flying Circus", icon_url=author_icon, attachments=attachments)
