@@ -72,3 +72,24 @@ Advanced usage
     message['text'] = markdown_msg
     attachments.append(message)
     mwh.send(attachments=attachments)
+
+Testing
+=======
+
+Install the test dependencies first:
+
+.. code-block:: bash
+
+    pip install pytest pytest-cov
+
+Run the tests:
+
+.. code-block:: bash
+
+    pytest tests/
+
+Run the tests with code coverage:
+
+.. code-block:: bash
+
+    pytest tests/ --cov=matterhook --cov-report=term-missing
